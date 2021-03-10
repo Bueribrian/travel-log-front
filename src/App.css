@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.marker{
+    stroke:orangered;
+    fill:orangered;
+    padding:1rem;
+    z-index: -1;
+}
+.custom-marker{
+    cursor: pointer !important;
+    transition: .3s margin-top!important; 
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.custom-marker:hover{
+    margin-top: -1rem;
+    transition: .3s margin-top!important; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mapboxgl-popup-content{
+    padding: 1rem !important;
+    display: flex;
+    flex-direction: column;
 }
-
-.App-link {
-  color: #61dafb;
+.mapboxgl-popup-content > *{
+    margin-bottom: .7rem;
+    font-weight: 400;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mapboxgl-popup-content img{
+    min-height: 200px;
+    width: 100%;
+    max-width: 450px;
+    margin: 1.5rem auto;
+    background: gray;
+    object-fit: contain;
+}
+.mapboxgl-popup-close-button{
+    font-size: 2rem;
+    right: -1rem !important;
+    top: -2rem !important;
+    background:#000 !important;
+    color:orangered !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    border: 0 !important;
+    border-radius: 0 3px 0 0 !important;
+    cursor: pointer !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 50% !important;
 }
