@@ -10,7 +10,7 @@ export default function Search(props) {
   const [entries, setEntries] = useState([]);
 
   async function onSubmit(data) {
-    if (data.search.length != "") {
+    if (data.search.length !== 0) {
       try {
         let entriesFiltered = await getEntriesByQuery(data.search);
         if(entriesFiltered.data.length === 0){

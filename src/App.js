@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { variantMarker, variantContainerMarkers } from "./variants";
 import AddNewEntryModal from "./components/addNewEntryModal";
 import Search from "./components/search";
-import { getEntries, addEntry } from "./api/api";
+import { getEntries } from "./api/api";
 
 function App() {
   const [viewport, setViewport] = useState({
@@ -137,7 +137,7 @@ function App() {
                       <img
                         style={{ maxWidth: "350px", textAlign: "center" }}
                         src={image}
-                        alt="image-marker"
+                        alt="marker"
                       ></img>
                       <span>Latitude: {latitude}</span>
                       <span>Longitude: {longitude}</span>

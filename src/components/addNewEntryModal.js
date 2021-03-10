@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { addEntry } from "../api/api";
 
 export default function AddNewEntryModal(props) {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit} = useForm();
   const [sending, setSending] = useState(false);
-  const modal = {
-    hidden: { x: 20, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-    },
-  };
+  // const modal = {
+  //   hidden: { x: 20, opacity: 0 },
+  //   visible: {
+  //     x: 0,
+  //     opacity: 1,
+  //   },
+  // };
 
   async function onSubmit(data) {
     await setSending(true);
     try {
-      let newEntry = await addEntry(data);
+      await addEntry(data);
       props.listEntries();
       props.setOpenModal({
         status: false,
